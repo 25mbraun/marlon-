@@ -1,34 +1,34 @@
 from djitellopy import tello
 from time import sleep
 
-M1 = tello.Tello()
-M1.connect()
-print(M1.get_battery())
+dr = tello.Tello()
+dr.connect()
+print(dr.get_battery())
 
-M1.takeoff()
+dr.takeoff()
 
-#  Starting Takeoff Point
-M1.move_up(95)
-M1.move_forward(400)
+# Takeoff Point
+dr.move_up(95)
+dr.move_forward(500)
 sleep(.5)
-M1.move_forward(400)
+dr.move_forward(100)
 sleep(1)
 
 # Moving in to the flying zone
-M1.rotate_counter_clockwise(90)
-M1.move_forward(350)
+dr.rotate_counter_clockwise(90)
+dr.move_forward(350)
 sleep(1)
 
 # Going to start
-M1.Rotate_counter_clockwise(90)
-M1.move_forward(350)
+dr.Rotate_counter_clockwise(90)
+dr.move_forward(500)
 sleep(.5)
-M1.move_forward(350)
+dr.move_forward(100)
 sleep(1)
 
 # Landing Zone for the drone
-M1.rotate_counter_clockwise(90)
-M1.move_forward(370)
+dr.rotate_counter_clockwise(90)
+dr.move_forward(350)
 sleep(1)
 
-M1.Land()
+dr.Land()
